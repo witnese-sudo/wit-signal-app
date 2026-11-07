@@ -21,7 +21,7 @@ setInterval(tick, 10000);
 const runBtn = document.getElementById('runBtn');
 if (runBtn) {
   runBtn.addEventListener('click', () => {
-    runBtn.textContent = 'Simulating…';
-    setTimeout(() => { runBtn.textContent = 'Run Simulation ▶'; }, 1200);
+    runBtn.textContent = 'Demo preview…';
+    setTimeout(() => { runBtn.textContent = 'Preview Demo ▶'; }, 1200);
   });
 }
