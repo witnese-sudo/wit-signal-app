@@ -9,6 +9,6 @@
 .screen[hidden]{display:none}
 .nodes{grid-template-columns:repeat(3,minmax(0,1fr))}
 .nodes>div{min-width:0}
-.nodes span{overflow-wrap:anywhere}
+.nodes span{display:block;font-size:12px;line-height:1.4;overflow-wrap:anywhere}
 .tabbar button{font-size:10px}
 .preview-note{margin:0 0 12px}
