@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 <meta name="theme-color" content="#03060a"/>
@@ -14,7 +14,7 @@
 <div class="stage"><div class="phone"><div class="phone-bezel">
 <div class="status-bar"><span id="clock">9:41</span><span class="dynamic-island"></span><span>●●●</span></div>
 <main class="screens" id="screens">
-<section class="screen active" data-screen="mission" tabindex="-1">
+<section class="screen active" data-screen="mission" aria-label="Mission" tabindex="-1">
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">FROM NATURE. TO NEW ENERGY.</div></div><div class="aside-label">SAME<br/>PLANET.<br/>HIGHER<br/>POTENTIAL.</div></header></div>
 <div class="panel"><div class="mission-head"><div><h1>MISSION</h1><p class="kicker">RESEARCH OS</p><p class="lede">NATURE-INSPIRED INTELLIGENCE<br/>EXPLORING MATERIAL POTENTIAL.</p></div><div class="readiness"><strong>DEMO</strong><div class="tag">PROTOTYPE</div></div></div>
@@ -23,7 +23,7 @@
 <button class="tile" onclick="go('simulator')"><strong>SIMULATE</strong><span>Explore demo interface</span></button>
 <button class="tile" onclick="go('truesignal')"><strong>VALIDATE</strong><span>True Signal evidence</span></button>
 </div></div></section>
-<section class="screen" data-screen="study" tabindex="-1" hidden inert>
+<section class="screen" data-screen="study" aria-label="Study" tabindex="-1" hidden inert>
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero hero-study"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">STUDY</div></div></header><h2 class="hero-title">TURN KNOWLEDGE<br/>INTO TRUE SIGNAL.</h2></div>
 <div class="sheet"><div class="search">MATERIAL LIBRARY</div>
@@ -31,25 +31,25 @@
 <div class="stats"><div><span>BANDGAP</span><b>—</b></div><div><span>EFFICIENCY</span><b>—</b></div><div><span>STABILITY</span><b>—</b></div><div><span>POTENTIAL</span><b>—</b></div></div>
 <p class="demo-note">Material example only. Composition, sources, test conditions and performance have not been documented in this prototype.</p>
 </div></div></section>
-<section class="screen" data-screen="simulator" tabindex="-1" hidden inert>
+<section class="screen" data-screen="simulator" aria-label="Simulator" tabindex="-1" hidden inert>
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero hero-sim"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">SIMULATOR</div></div></header><p class="hero-sub">EXPLORE. PREDICT. VALIDATE.</p>
 <div class="dual-select"><label>MATERIAL<select><option>Perovskite (Hybrid)</option></select></label><label>ENVIRONMENT<select><option>Ambient (Air)</option></select></label></div></div>
-<div class="sheet"><div class="sim-actions"><select class="ghost-select"><option>Demo controls</option></select><button class="run" id="runBtn" aria-describedby="previewNote">Preview Demo ▶</button></div>
+<div class="sheet"><div class="sim-actions"><select class="ghost-select" aria-label="Demo controls"><option>Demo controls</option></select><button class="run" id="runBtn" aria-describedby="previewNote">Preview Demo ▶</button></div>
 <p class="demo-note preview-note" id="previewNote">Interface preview only — no scientific calculation or evidence status change.</p>
 <div class="gauges"><div class="gauge"><b>—</b><span>Efficiency (not calculated)</span></div><div class="gauge"><b>—</b><span>Stability (not calculated)</span></div><div class="gauge"><b>—</b><span>Gain (not calculated)</span></div></div></div></section>
-<section class="screen" data-screen="experiment" tabindex="-1" hidden inert>
+<section class="screen" data-screen="experiment" aria-label="Experiment" tabindex="-1" hidden inert>
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero hero-experiment"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">EXPERIMENT</div></div></header><p class="hero-sub">FROM IDEA. TO REALITY.</p></div>
 <div class="sheet"><div class="card"><div class="timeline process"><span class="node"></span><span class="line"></span><span class="node"></span><span class="line"></span><span class="node"></span><span class="line"></span><span class="node"></span></div><div class="t-labels"><span>DESIGN</span><span>BUILD</span><span>TEST</span><span>MEASURE</span></div></div>
 <div class="card"><div class="setup-top"><div><span class="tag">EXAMPLE SETUP</span><h3>Spin Coating (example)</h3></div><span class="live">DEMO</span></div>
 <div class="params"><div><span>Speed</span><b>—</b></div><div><span>Time</span><b>—</b></div><div><span>Temperature</span><b>—</b></div></div></div></div></section>
-<section class="screen" data-screen="truesignal" tabindex="-1" hidden inert>
+<section class="screen" data-screen="truesignal" aria-label="True Signal" tabindex="-1" hidden inert>
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero hero-truesignal"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">TRUE SIGNAL</div></div></header><p class="hero-sub">SIMULATED → MEASURED → VERIFIED.</p></div>
 <div class="sheet"><div class="verify-row"><div class="v-step"><span class="pending">—</span>SIMULATED</div><div class="v-step"><span class="pending">—</span>MEASURED</div><div class="v-step"><span class="pending">—</span>VERIFIED</div></div>
 <div class="card"><span class="tag">STATUS</span><h2 class="verified">UNASSESSED</h2><p>No simulation, physical measurement or verification evidence is linked in this prototype. The steps above describe a workflow, not completed checks.</p></div></div></section>
-<section class="screen" data-screen="ip" tabindex="-1" hidden inert>
+<section class="screen" data-screen="ip" aria-label="IP" tabindex="-1" hidden inert>
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero hero-ip"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">IP</div></div></header><p class="hero-sub">FROM DISCOVERY. TO IMPACT.</p></div>
 <div class="sheet">
@@ -58,7 +58,7 @@
 <button class="row-card"><div><strong>Collaboration Opportunities</strong><p>Demo only • No active collaborations documented here</p></div></button>
 <button class="row-card"><div><strong>Market Potential</strong><p>Potential applications • Assessment not documented here</p></div></button>
 </div></section>
-<section class="screen" data-screen="world" tabindex="-1" hidden inert>
+<section class="screen" data-screen="world" aria-label="World" tabindex="-1" hidden inert>
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero hero-world"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">WORLD</div></div></header><p class="hero-sub">SAME PLANET. HIGHER POTENTIAL.</p></div>
 <div class="sheet"><div class="card"><h3>Research Network</h3><div class="nodes"><div><b>—</b><span>Labs (unconfirmed)</span></div><div><b>—</b><span>Datasets (unconfirmed)</span></div><div><b>—</b><span>Pilots (unconfirmed)</span></div></div></div></div></section>
