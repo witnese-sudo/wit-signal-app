@@ -1,12 +1,23 @@
 const tabbar = document.getElementById('tabbar');
-function go(name) {
-  document.querySelectorAll('.screen').forEach(s => {
-    s.classList.toggle('active', s.dataset.screen === name);
+function go(name, moveFocus = true) {
+  const screens = Array.from(document.querySelectorAll('.screen'));
+  const target = screens.find(s => s.dataset.screen === name);
+  if (!target) return;
+  screens.forEach(s => {
+    const active = s === target;
+    s.hidden = !active;
+    s.inert = !active;
+    s.classList.toggle('active', active);
   });
   tabbar.querySelectorAll('button').forEach(b => {
-    b.classList.toggle('on', b.dataset.go === name);
+    const active = b.dataset.go === name;
+    b.classList.toggle('on', active);
+    if (active) b.setAttribute('aria-current', 'page');
+    else b.removeAttribute('aria-current');
   });
+  if (moveFocus) target.focus({ preventScroll: true });
 }
+go('mission', false);
 window.go = go;
 tabbar.addEventListener('click', (e) => {
   const btn = e.target.closest('button[data-go]');
