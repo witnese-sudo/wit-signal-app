@@ -12,3 +12,27 @@
 .nodes span{display:block;font-size:12px;line-height:1.4;overflow-wrap:anywhere}
 .tabbar button{font-size:10px}
 .preview-note{margin:0 0 12px}
+
+/* Local instrument capture, within the existing Experiment screen. */
+.instrument{font-size:13px;line-height:1.5}
+.instrument h3{font-size:20px;margin:5px 0 10px}
+.instrument p,.instrument figure,.instrument details{margin:12px 0}
+.instrument label{display:flex;flex-direction:column;gap:6px;margin:12px 0;color:#c5d8d6}
+.instrument input,.instrument select,.instrument textarea{width:100%;min-width:0;min-height:44px;background:#08151b;border:1px solid #527176;border-radius:8px;padding:9px;color:#e8f6f2;font:inherit}
+.instrument input[type=file]{font-size:12px}
+.instrument button{min-height:44px;max-width:100%;border:1px solid var(--cyan);border-radius:9px;background:#0c2926;padding:10px 12px;font:inherit;color:#e8f6f2;cursor:pointer}
+.instrument button:disabled{opacity:.5;cursor:default}
+.instrument :focus-visible{outline:2px solid #ffe35c;outline-offset:3px}
+.instrument .check-label{flex-direction:row;align-items:flex-start}
+.instrument input[type=checkbox]{width:22px;min-height:22px;flex-shrink:0;margin-top:2px}
+.instrument canvas{display:block;width:100%;height:auto;border:1px solid #527176;border-radius:6px}
+.instrument figcaption{font-size:12px;color:#c5d8d6;margin-top:6px}
+.instrument pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:11px}
+.instrument ul,.instrument ol{padding-left:20px}
+.instrument li{margin:8px 0;overflow-wrap:anywhere}
+.source-badge{border:1px solid #e9bf52;color:#ffe09a;padding:8px;border-radius:8px}
+#captureWarnings{color:#ffe09a}
+.instrument-log{border-top:1px solid var(--stroke);margin-top:20px;padding-top:12px}
+.screen[data-screen=experiment] .hero{min-height:230px;flex-shrink:0}
+.screen[data-screen=experiment] .sheet{min-height:0;margin-top:0}
+
