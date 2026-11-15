@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 <meta name="theme-color" content="#03060a"/>
@@ -14,7 +14,7 @@
 <div class="stage"><div class="phone"><div class="phone-bezel">
 <div class="status-bar"><span id="clock">9:41</span><span class="dynamic-island"></span><span>●●●</span></div>
 <main class="screens" id="screens">
-<section class="screen active" data-screen="mission">
+<section class="screen active" data-screen="mission" aria-label="Mission" tabindex="-1">
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">FROM NATURE. TO NEW ENERGY.</div></div><div class="aside-label">SAME<br/>PLANET.<br/>HIGHER<br/>POTENTIAL.</div></header></div>
 <div class="panel"><div class="mission-head"><div><h1>MISSION</h1><p class="kicker">RESEARCH OS</p><p class="lede">NATURE-INSPIRED INTELLIGENCE<br/>EXPLORING MATERIAL POTENTIAL.</p></div><div class="readiness"><strong>DEMO</strong><div class="tag">PROTOTYPE</div></div></div>
@@ -23,7 +23,7 @@
 <button class="tile" onclick="go('simulator')"><strong>SIMULATE</strong><span>Explore demo interface</span></button>
 <button class="tile" onclick="go('truesignal')"><strong>VALIDATE</strong><span>True Signal evidence</span></button>
 </div></div></section>
-<section class="screen" data-screen="study">
+<section class="screen" data-screen="study" aria-label="Study" tabindex="-1" hidden inert>
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero hero-study"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">STUDY</div></div></header><h2 class="hero-title">TURN KNOWLEDGE<br/>INTO TRUE SIGNAL.</h2></div>
 <div class="sheet"><div class="search">MATERIAL LIBRARY</div>
@@ -31,24 +31,63 @@
 <div class="stats"><div><span>BANDGAP</span><b>—</b></div><div><span>EFFICIENCY</span><b>—</b></div><div><span>STABILITY</span><b>—</b></div><div><span>POTENTIAL</span><b>—</b></div></div>
 <p class="demo-note">Material example only. Composition, sources, test conditions and performance have not been documented in this prototype.</p>
 </div></div></section>
-<section class="screen" data-screen="simulator">
+<section class="screen" data-screen="simulator" aria-label="Simulator" tabindex="-1" hidden inert>
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero hero-sim"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">SIMULATOR</div></div></header><p class="hero-sub">EXPLORE. PREDICT. VALIDATE.</p>
 <div class="dual-select"><label>MATERIAL<select><option>Perovskite (Hybrid)</option></select></label><label>ENVIRONMENT<select><option>Ambient (Air)</option></select></label></div></div>
-<div class="sheet"><div class="sim-actions"><select class="ghost-select"><option>Demo controls</option></select><button class="run" id="runBtn">Preview Demo ▶</button></div>
+<div class="sheet"><div class="sim-actions"><select class="ghost-select" aria-label="Demo controls"><option>Demo controls</option></select><button class="run" id="runBtn" aria-describedby="previewNote">Preview Demo ▶</button></div>
+<p class="demo-note preview-note" id="previewNote">Interface preview only — no scientific calculation or evidence status change.</p>
 <div class="gauges"><div class="gauge"><b>—</b><span>Efficiency (not calculated)</span></div><div class="gauge"><b>—</b><span>Stability (not calculated)</span></div><div class="gauge"><b>—</b><span>Gain (not calculated)</span></div></div></div></section>
-<section class="screen" data-screen="experiment">
-<p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
+<section class="screen" data-screen="experiment" aria-label="Experiment" tabindex="-1" hidden inert>
+<p class="demo-banner">PROTOTYPE • Local instrument import available. Imported data require review.</p>
 <div class="hero hero-experiment"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">EXPERIMENT</div></div></header><p class="hero-sub">FROM IDEA. TO REALITY.</p></div>
 <div class="sheet"><div class="card"><div class="timeline process"><span class="node"></span><span class="line"></span><span class="node"></span><span class="line"></span><span class="node"></span><span class="line"></span><span class="node"></span></div><div class="t-labels"><span>DESIGN</span><span>BUILD</span><span>TEST</span><span>MEASURE</span></div></div>
 <div class="card"><div class="setup-top"><div><span class="tag">EXAMPLE SETUP</span><h3>Spin Coating (example)</h3></div><span class="live">DEMO</span></div>
-<div class="params"><div><span>Speed</span><b>—</b></div><div><span>Time</span><b>—</b></div><div><span>Temperature</span><b>—</b></div></div></div></div></section>
-<section class="screen" data-screen="truesignal">
+<div class="params"><div><span>Speed</span><b>—</b></div><div><span>Time</span><b>—</b></div><div><span>Temperature</span><b>—</b></div></div></div>
+<article class="card instrument" lang="da" aria-labelledby="instrumentTitle">
+<span class="tag">FNIRSI 2C53P · FILIMPORT</span><h3 id="instrumentTitle">Din gemte målekurve</h3>
+<p>Vælg det originale BMP/BIN-par med samme filnummer. Filerne behandles i browseren og sendes ikke til en server. Ingen liveforbindelse.</p>
+<label>Billede · Screenshot file<input id="bmpFile" type="file" accept=".bmp" /></label>
+<label>Kurve · Screenshot simple file<input id="binFile" type="file" accept=".bin" /></label>
+<button type="button" id="importCapture">Læs filpar</button>
+<p id="importStatus" role="status" aria-live="polite">Ingen filer indlæst.</p>
+<div id="capturePanel" hidden>
+<p class="source-badge">IMPORTERET FIL · AFVENTER VALIDERING</p>
+<p id="pairCheck"></p><ul id="captureWarnings"></ul>
+<figure><canvas id="captureImage" width="480" height="272" role="img" aria-label="Originalt instrumentbillede fra BMP"></canvas><figcaption>Originalt BMP-billede, vist som RGB565.</figcaption></figure>
+<details><summary>Originalfiler og SHA-256</summary><pre id="fileProvenance"></pre></details>
+<form id="captureSettings">
+<p>Læs skalaerne på billedet og bekræft dem her. Ukendte skalaer giver kun punktnummer og skærmkode. X10 må ikke ganges på igen.</p>
+<div class="instrument-fields">
+<label>V/div · som vist på skærmen<select id="voltsPerDiv" required><option value="">Ukendt</option><option value="0.01">10 mV</option><option value="0.02">20 mV</option><option value="0.05">50 mV</option><option value="0.1">100 mV</option><option value="0.2">200 mV</option><option value="0.5">500 mV</option><option value="1">1 V</option><option value="2">2 V</option><option value="5">5 V</option><option value="10">10 V</option><option value="20">20 V</option><option value="50">50 V</option><option value="100">100 V</option></select></label>
+<label>Tid/div<select id="secondsPerDiv" required><option value="">Ukendt</option><option value="0.00000001">10 ns</option><option value="0.00000002">20 ns</option><option value="0.00000005">50 ns</option><option value="0.0000001">100 ns</option><option value="0.0000002">200 ns</option><option value="0.0000005">500 ns</option><option value="0.000001">1 µs</option><option value="0.000002">2 µs</option><option value="0.000005">5 µs</option><option value="0.00001">10 µs</option><option value="0.00002">20 µs</option><option value="0.00005">50 µs</option><option value="0.0001">100 µs</option><option value="0.0002">200 µs</option><option value="0.0005">500 µs</option><option value="0.001">1 ms</option><option value="0.002">2 ms</option><option value="0.005">5 ms</option><option value="0.01">10 ms</option><option value="0.02">20 ms</option><option value="0.05">50 ms</option><option value="0.1">100 ms</option><option value="0.2">200 ms</option><option value="0.5">500 ms</option><option value="1">1 s</option><option value="2">2 s</option><option value="5">5 s</option><option value="10">10 s</option></select></label>
+<label>Probe · på skærm og håndtag<select id="probeRatio" required><option value="">Ukendt</option><option value="1">X1 / 1:1</option><option value="10">X10 / 10:1</option></select></label>
+<label>Kobling<select id="captureCoupling" required><option value="">Ukendt</option><option value="DC">DC</option><option value="AC">AC</option></select></label>
+<label>Nulkode · 270 minus nulmarkørens pixelrække<input id="zeroCode" type="number" min="0" max="255" step="1" required /></label>
+</div>
+<p id="zeroSuggestion"></p>
+<label class="check-label"><input id="scalesConfirmed" type="checkbox" required />Jeg har kontrolleret skalaer, nulpunkt og probe mod optagelsen.</label>
+<button type="submit" id="applyScales">Anvend bekræftede skalaer</button>
+</form>
+<figure><canvas id="waveform" width="640" height="320" role="img" aria-label="CH1-kurve i skærmkoder"></canvas><figcaption id="waveformCaption">CH1 · punktnummer og skærmkode.</figcaption></figure>
+<p id="captureMetrics" role="status"></p>
+<p>Dette er skærmpunkter, ikke instrumentets fulde ADC-buffer. Beregninger er afledte estimater; frekvens kan være påvirket af aliasering. Import er ikke kalibrering eller VERIFIED.</p>
+<form id="captureLogForm">
+<label>Prøve-/test-ID<input id="sampleId" maxlength="120" required placeholder="Dit eget ID" /></label>
+<label>Oprindelse<select id="captureOrigin" required><option value="">Vælg oprindelse</option><option value="physical">Fysisk instrumentoptagelse</option><option value="simulated">Simuleret/testgenereret fil</option><option value="unknown">Ukendt</option></select></label>
+<label>Måletidspunkt · valgfrit, din lokale tid<input id="measuredAt" type="datetime-local" /></label>
+<label>Forsøgsbetingelser og noter<textarea id="captureNotes" maxlength="4000" rows="3" placeholder="Signalets kilde, forventet signal, miljø og eventuelle afvigelser"></textarea></label>
+<button type="submit" id="logCapture">Føj til forsøgslog</button>
+</form>
+</div>
+<div class="instrument-log"><h4>Forsøgslog · denne session</h4><p>Loggen og filerne forsvinder ved genindlæsning. Eksportér JSON for at bevare originaler, hashes, metadata og kurvepunkter.</p><ol id="captureLog"></ol><button type="button" id="exportCaptureLog" disabled>Eksportér log + originalfiler</button><p id="logStatus" role="status" aria-live="polite"></p></div>
+</article></div></section>
+<section class="screen" data-screen="truesignal" aria-label="True Signal" tabindex="-1" hidden inert>
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero hero-truesignal"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">TRUE SIGNAL</div></div></header><p class="hero-sub">SIMULATED → MEASURED → VERIFIED.</p></div>
 <div class="sheet"><div class="verify-row"><div class="v-step"><span class="pending">—</span>SIMULATED</div><div class="v-step"><span class="pending">—</span>MEASURED</div><div class="v-step"><span class="pending">—</span>VERIFIED</div></div>
 <div class="card"><span class="tag">STATUS</span><h2 class="verified">UNASSESSED</h2><p>No simulation, physical measurement or verification evidence is linked in this prototype. The steps above describe a workflow, not completed checks.</p></div></div></section>
-<section class="screen" data-screen="ip">
+<section class="screen" data-screen="ip" aria-label="IP" tabindex="-1" hidden inert>
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero hero-ip"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">IP</div></div></header><p class="hero-sub">FROM DISCOVERY. TO IMPACT.</p></div>
 <div class="sheet">
@@ -57,7 +96,7 @@
 <button class="row-card"><div><strong>Collaboration Opportunities</strong><p>Demo only • No active collaborations documented here</p></div></button>
 <button class="row-card"><div><strong>Market Potential</strong><p>Potential applications • Assessment not documented here</p></div></button>
 </div></section>
-<section class="screen" data-screen="world">
+<section class="screen" data-screen="world" aria-label="World" tabindex="-1" hidden inert>
 <p class="demo-banner">DEMO PROTOTYPE • No documented patent status or research results are presented here.</p>
 <div class="hero hero-world"><header class="topbar"><div><div class="wordmark">WIT<span>//</span>SIGNAL</div><div class="tag">WORLD</div></div></header><p class="hero-sub">SAME PLANET. HIGHER POTENTIAL.</p></div>
 <div class="sheet"><div class="card"><h3>Research Network</h3><div class="nodes"><div><b>—</b><span>Labs (unconfirmed)</span></div><div><b>—</b><span>Datasets (unconfirmed)</span></div><div><b>—</b><span>Pilots (unconfirmed)</span></div></div></div></div></section>
@@ -73,4 +112,7 @@
 <div class="home-indicator"></div>
 </div></div></div>
 <script src="app.js"></script>
+<script src="fnirsi.js"></script>
+<script src="instrument.js"></script>
 </body></html>
+

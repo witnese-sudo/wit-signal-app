@@ -1,0 +1,9 @@
+{
+  "name": "wit-signal-app",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/fnirsi.test.cjs tests/instrument.test.cjs",
+    "check": "node --check app.js && node --check fnirsi.js && node --check instrument.js",
+    "test:browser": "node tests/browser.cjs"
+  }
+}
