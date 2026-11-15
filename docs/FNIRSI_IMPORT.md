@@ -97,8 +97,20 @@ waveform/settings were applied. The observed waveform remains square-like.
 export and the seven existing destinations and can save a local screenshot. It requires
 Playwright plus a browser installation; `CHROMIUM_PATH` optionally selects that browser.
 The host Chromium run was blocked by `socket() failed: Operation not permitted` before
-opening a page. **Real browser layout, physical iPhone/Safari and hardware-to-UI file
-selection remain unverified.** DOM-adapter tests are not visual/browser validation.
+opening a page. A subsequent dependency-free native Chrome test on DISSART passed
+33 checks at each exact emulated viewport: 390 × 844, 320 × 740 and 1280 × 900.
+`tests/native-browser.cjs` uses an isolated headless browser profile, a standalone QA
+copy of the actual source and private fixture files outside the repository. Chrome
+DevTools explicitly sets and checks viewport dimensions; window-size hints alone on
+Windows initially produced a 512-pixel minimum and were not counted as mobile proof.
+
+Real DOM/canvas checks cover capture 3, native required-field validation, original-byte
+and SHA-256 export, explicit origin, unknown measurement timestamp, no verification
+promotion, immutable snapshots, scale invalidation, incomplete/mismatched rejection,
+seven-screen navigation/focus and horizontal overflow. The 390- and 320-pixel rendered
+screenshots were visually inspected. Actual file inputs are populated programmatically
+with DataTransfer in this test. **Physical iPhone/Safari, OS file-picker interaction and
+live USB integration remain unverified.** No private files or screenshots are committed.
 
 ## Review dependency
 
